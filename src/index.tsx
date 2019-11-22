@@ -1,16 +1,23 @@
-import * as React from "react"
-import * as ReactDOM from "react-dom"
+import * as _React from "react"
+import * as _ReactDOM from "react-dom"
+import { AES, enc } from "crypto-js"
+
+declare global {
+	const React: typeof _React
+	const ReactDOM: typeof _ReactDOM
+}
 
 // Expose these on the window so we don't have to re-bundle for the secret code.
-window.React = React
-window.ReactDOM = ReactDOM
+window["React"] = _React
+window["ReactDOM"] = _ReactDOM
 
-const secretCode = `
-function App2() {
-	return React.createElement("div", {}, "Secret!")
+const ciphertext = require("raw-loader!./encrypt.js!./secret.tsx").default
+
+function decrypt(password: string) {
+	const bytes = AES.decrypt(ciphertext, "testing")
+	const javascript = bytes.toString(enc.Utf8)
+	eval(javascript)
 }
-ReactDOM.render(React.createElement(App2, {}), document.body)
-`.trim()
 
 export function App() {
 	// const [{ x, y }, setMouse] = React.useState({ x: 0, y: 0 })
@@ -28,9 +35,15 @@ export function App() {
 		<div>
 			<h1>Hello World</h1>
 			<input placeholder="HERE" />
-			<button onClick={() => eval(secretCode)}>click</button>
+			<button
+				onClick={() => {
+					decrypt("testing")
+				}}
+			>
+				click
+			</button>
 		</div>
 	)
 }
 
-ReactDOM.render(<App />, document.body)
+ReactDOM.render(<App />, document.getElementById("root"))
