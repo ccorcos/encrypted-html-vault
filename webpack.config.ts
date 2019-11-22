@@ -27,6 +27,7 @@ const config: Configuration = {
 		filename: "[name].js",
 	},
 	plugins: [
+		// Inject JS inline into index.html.
 		new HtmlWebpackPlugin({
 			inlineSource: ".(js|css)$",
 			template: path.join(__dirname, "src/index.html"),

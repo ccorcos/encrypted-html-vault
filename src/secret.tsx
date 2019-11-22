@@ -1,18 +1,9 @@
-function Secret() {
-	// const [{ x, y }, setMouse] = React.useState({ x: 0, y: 0 })
-	// React.useEffect(() => {
-	// 	const handleMouseMove = event => {
-	// 		setMouse({ x: event.clientX, y: event.clientY })
-	// 	}
-	// 	window.addEventListener("mousemove", handleMouseMove)
-	// 	return () => {
-	// 		window.removeEventListener("mousemove", handleMouseMove)
-	// 	}
-	// })
+// Do not import anything into this file, Webpack is not configured to handle that.
 
+function Secret() {
 	return (
 		<div>
-			<h1>Injected!</h1>
+			<h1>This is secret!</h1>
 		</div>
 	)
 }
