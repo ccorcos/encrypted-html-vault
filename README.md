@@ -8,21 +8,6 @@ TODO: example
 
 ## Getting Started
 
-- Create a directory `src/secret` that will be gitignored.
-- Create a file `src/secret/secret.tsx` with the following boilerplate contents
-		```
-		// Do not import anything into this file, Webpack is not configured to handle that.
-
-		function Secret() {
-			return (
-				<div>
-					<h1>This is secret</h1>
-					<img src={"INJECT:./path-to-image.jpeg"} />
-				</div>
-			)
-		}
-
-		ReactDOM.render(<Secret />, document.getElementById("root"))
-		```
+- Rename `src/example` to `src/secret` which will gitignore any files you put in here.
 - Start up the development server with `npm start` and the testing password is "chet123".
 - When you're done developing and want a final html file, run `HTML_PASSWORD='this is my password' npm run build`. Make sure your password is long so it cannot be brute-forced.
