@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "webpack-dev-server --content-base dist",
-		"build": "rm -rf dist && webpack -p",
+		"build": "rm -rf dist && webpack -p && rm -f dist/main.js",
 		"deploy": "git add -f dist && git commit -m 'deploy' && git push origin `git subtree split --prefix dist master`:gh-pages --force && git rm -r dist && git commit -m 'cleanup deploy'",
 		"release": "npm run build && npm run deploy"
 	},
@@ -13,18 +13,20 @@
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"glamor": "^2.20.40",
+		"crypto-js": "^3.1.9-1",
 		"lodash": "^4.17.15",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0"
 	},
 	"devDependencies": {
+		"@types/crypto-js": "^3.1.43",
 		"@types/lodash": "^4.14.149",
 		"@types/react": "^16.9.11",
 		"@types/react-dom": "^16.9.4",
 		"@types/webpack": "^4.41.0",
 		"awesome-typescript-loader": "^5.2.1",
 		"file-loader": "^4.3.0",
+		"html-webpack-inline-source-plugin": "0.0.10",
 		"html-webpack-plugin": "^3.2.0",
 		"ts-node": "^8.5.2",
 		"typescript": "^3.7.2",

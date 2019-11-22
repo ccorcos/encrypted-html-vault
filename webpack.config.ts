@@ -1,5 +1,6 @@
 import * as path from "path"
 import * as HtmlWebpackPlugin from "html-webpack-plugin"
+import * as HtmlWebpackInlineSourcePlugin from "html-webpack-inline-source-plugin"
 import { Configuration } from "webpack"
 
 const config: Configuration = {
@@ -21,16 +22,16 @@ const config: Configuration = {
 		],
 	},
 	cache: true,
-	devtool: "source-map",
 	output: {
 		path: path.join(__dirname, "dist"),
-		filename: "[name]-[chunkhash].js",
-		chunkFilename: "[name]-[chunkhash].js",
+		filename: "[name].js",
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
+			inlineSource: ".(js|css)$",
 			template: path.join(__dirname, "src/index.html"),
 		}),
+		new HtmlWebpackInlineSourcePlugin(),
 	],
 }
 
