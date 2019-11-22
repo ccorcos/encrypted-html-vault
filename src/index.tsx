@@ -12,7 +12,8 @@ window["React"] = _React
 window["ReactDOM"] = _ReactDOM
 
 // Encrypted webpack bundle.
-const ciphertext = require("raw-loader!./encrypt.js!./secret.tsx").default
+const ciphertext = require("raw-loader!./encrypt.js!./secret/secret.tsx")
+	.default
 
 function decrypt(password: string) {
 	const bytes = AES.decrypt(ciphertext, password)

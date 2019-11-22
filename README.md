@@ -14,3 +14,18 @@ I want to save encrypted information on a thumb drive that I can access easily f
 - run dev for rendering secret page
 - run dev for rendering password page
 - build script for putting it all together
+
+
+```
+// Do not import anything into this file, Webpack is not configured to handle that.
+
+function Secret() {
+	return (
+		<div>
+			<h1>This is secret!</h1>
+		</div>
+	)
+}
+
+ReactDOM.render(<Secret />, document.getElementById("root"))
+```
