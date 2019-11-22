@@ -6,7 +6,7 @@ Well, just about every computer in the world these days can open up an HTML file
 
 ## Example / Demo
 
-I've compiled an example HTML file with the password `chet123`. You can (view the html file here](https://raw.githubusercontent.com/ccorcos/encrypted-html-vault/master/example.html) and [run the example here](https://rawcdn.githack.com/ccorcos/encrypted-html-vault/38edaada909b2d5b3c09f32900bc7cf55f8a9f70/example.html).
+I've compiled an example HTML file with the password `chet123`. You can [view the html file here](https://raw.githubusercontent.com/ccorcos/encrypted-html-vault/master/example.html) and [run the example here](https://rawcdn.githack.com/ccorcos/encrypted-html-vault/38edaada909b2d5b3c09f32900bc7cf55f8a9f70/example.html).
 
 ## Making Your Own
 
