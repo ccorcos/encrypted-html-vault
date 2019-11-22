@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "HTML_PASSWORD='chet123' node --max-old-space-size=8192 ./node_modules/.bin/webpack-dev-server  --content-base dist",
-		"build": "rm -rf dist && read -s HTML_PASSWORD && node --max-old-space-size=8192 ./node_modules/.bin/webpack -p && rm -f dist/main.js"
+		"build": "./build.sh"
 	},
 	"keywords": [],
 	"author": "",
