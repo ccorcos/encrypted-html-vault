@@ -15,6 +15,8 @@ window["ReactDOM"] = _ReactDOM
 const ciphertext = require("raw-loader!./encrypt.js!./secret/secret.tsx")
 	.default
 
+console.log("ciphertext.length", ciphertext.length / 1000 / 1000 + "MB")
+
 function decrypt(password: string) {
 	const bytes = AES.decrypt(ciphertext, password)
 	const javascript = bytes.toString(enc.Utf8)
