@@ -39,6 +39,7 @@ export function App() {
 	return (
 		<div>
 			<h1>Hello, welcome to my vault. Please type a password to unlock.</h1>
+			<img src={require("url-loader!./face.jpeg")} />
 			<input
 				ref={input}
 				placeholder="unlock"
