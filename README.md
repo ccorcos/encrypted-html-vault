@@ -10,4 +10,4 @@ TODO: example
 
 - Rename `src/example` to `src/secret` which will gitignore any files you put in here.
 - Start up the development server with `npm start` and the testing password is "chet123".
-- When you're done developing and want a final html file, run `HTML_PASSWORD='this is my password' npm run build`. Make sure your password is long so it cannot be brute-forced.
+- When you're done developing and want a final html file, run `npm run build`. You will be prompted for a password -- make sure your password is long so it cannot be brute-forced easily.
