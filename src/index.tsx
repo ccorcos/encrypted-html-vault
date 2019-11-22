@@ -37,19 +37,49 @@ export function App() {
 	}
 
 	return (
-		<div>
-			<h1>Hello, welcome to my vault. Please type a password to unlock.</h1>
-			<img src={require("url-loader!./face.jpeg")} />
-			<input
-				ref={input}
-				placeholder="unlock"
-				type="password"
-				value={password}
-				onChange={e => setPassword(e.target.value)}
-				onKeyDown={e => e.key === "Enter" && submit()}
+		<div
+			style={{
+				maxWidth: "50em",
+				margin: "5em auto",
+				fontSize: "1.2em",
+			}}
+		>
+			<img
+				style={{ maxWidth: "5em" }}
+				src={require("url-loader!./face.jpeg")}
 			/>
-			<button onClick={() => submit()}>decrypt</button>
-			<div style={{ color: "red" }}>{error}</div>
+			<p>This vault belongs to Chester Corcos (a.k.a Chet).</p>
+			<p>
+				If you find this and wish to return it, here are various means of
+				contacting him:
+			</p>
+			<ul>
+				<li>
+					Phone: <a href="tel:19165489415">+1-916-548-9415</a>
+				</li>
+				<li>
+					Email: <a href="email:ccorcos@gmail.com">ccorcos@gmail.com</a>
+				</li>
+			</ul>
+			<p>To unlock the vault, enter your password:</p>
+			<div>
+				<input
+					ref={input}
+					placeholder="password"
+					type="password"
+					value={password}
+					style={{ fontSize: "0.9em" }}
+					onChange={e => setPassword(e.target.value)}
+					onKeyDown={e => e.key === "Enter" && submit()}
+				/>
+				<button
+					style={{ fontSize: "0.9em", marginLeft: "0.5em" }}
+					onClick={submit}
+				>
+					decrypt
+				</button>
+			</div>
+			<p style={{ color: "red" }}>{error}</p>
 		</div>
 	)
 }
